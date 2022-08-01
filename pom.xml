@@ -14,6 +14,9 @@
         <module>nacos-user-service</module>
         <module>nacos-config-client</module>
         <module>sentinel-service</module>
+        <module>seata-account-service</module>
+        <module>seata-order-service</module>
+        <module>seata-storage-service</module>
     </modules>
 
 </project>

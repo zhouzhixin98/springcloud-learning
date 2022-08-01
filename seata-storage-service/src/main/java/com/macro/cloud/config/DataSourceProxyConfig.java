@@ -2,6 +2,7 @@ package com.macro.cloud.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import io.seata.rm.datasource.DataSourceProxy;
+import org.apache.ibatis.logging.stdout.StdOutImpl;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.transaction.SpringManagedTransactionFactory;
@@ -39,6 +40,12 @@ public class DataSourceProxyConfig {
         sqlSessionFactoryBean.setMapperLocations(new PathMatchingResourcePatternResolver()
                 .getResources(mapperLocations));
         sqlSessionFactoryBean.setTransactionFactory(new SpringManagedTransactionFactory());
+        //设置sql打印
+//        org.apache.ibatis.session.Configuration configuration = new org.apache.ibatis.session.Configuration();
+//        configuration.setMapUnderscoreToCamelCase(true);
+//        configuration.setLogImpl(StdOutImpl.class);
+//        sqlSessionFactoryBean.setConfiguration(configuration);
+
         return sqlSessionFactoryBean.getObject();
     }
 
